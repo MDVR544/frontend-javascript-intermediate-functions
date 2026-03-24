@@ -40,21 +40,21 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // cumLaude([6, 4, 5]) geeft 0
 // cumLaude([8, 9, 4, 6, 10]) geeft 3
 
-let count = 0
-
-function cumLaude(arr){
-
-    for (let i = 0; i < arr.length; i++) {
-
-        if (arr[i] >= 8){
-            count++;
-        }
-    }
-    return console.log(count);
-}
-// cumLaude(grades);
-// cumLaude([6, 4, 5]);
-cumLaude([8, 9, 4, 6, 10]);
+// let count = 0;
+//
+// function cumLaude(arr){
+//
+//     for (let i = 0; i < arr.length; i++) {
+//
+//         if (arr[i] >= 8){
+//             count++;
+//         }
+//     }
+//     return console.log(count);
+// }
+// // cumLaude(grades);
+// // cumLaude([6, 4, 5]);
+// cumLaude([8, 9, 4, 6, 10]);
 
 
 /* Opdracht  2: Gemiddeld cijfer */
@@ -63,12 +63,24 @@ cumLaude([8, 9, 4, 6, 10]);
 // De studenten-administratie moet ieder blok opnieuw berekenen wat het gemiddelde eindcijfer is, maar we beginnen met de grades array van hierboven.
 // Schrijf de stapjes om dit te kunnen berekenen eerst uit en vraag jezelf de volgende dingen af:
 // * Hoe wordt een gemiddelde berekend?
+    // alle getallen optellen en delen door het aantal getallen
 // * Wat moet ik verzamelen uit de array van cijfers om uiteindelijk een gemiddelde te kunnen berekenen?
+    // de hoeveelheid entries, en het totaal van alle cijfers opgeteld.
 // * Hoe zorgt ik ervoor dat ik alle waardes uit de array kan langslopen, ook als de array wel 100 entries zou bevatten?
+    // grades.length gebruiken bij de for loop.
 // Log het antwoord in de terminal.
 
 // ---- Verwachte uitkomst: 6.642857142857143
 
+// let totalGrades = 0;
+// let indexCount = 0;
+//
+// for (let i = 0; i < grades.length; i++) {
+//     totalGrades += grades[i];
+//     indexCount++;
+// }
+//
+// console.log(totalGrades / indexCount);
 
 /* 2b: Omschrijven tot een herbruikbare functie */
 // Schrijf een functie genaamd averageGrade, die een array van cijfers verwacht (zoals grades) en het gemiddelde cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 2a.
@@ -80,6 +92,21 @@ cumLaude([8, 9, 4, 6, 10]);
 // averageGrade([6, 4, 5]) geeft 5
 // averageGrade([8, 9, 4, 6, 10]) geeft 7.4
 
+let totalGrades = 0;
+let indexCount = 0;
+
+function averageGrade(arr2){
+    for (let i = 0; i < arr2.length; i++) {
+        totalGrades += arr2[i];
+        indexCount++
+    }
+    let averageResult = totalGrades / indexCount
+    return console.log(averageResult.toFixed(2));
+}
+
+// averageGrade((grades));
+// averageGrade([6, 4, 5]);
+// averageGrade([8, 9, 4, 6, 10]);
 
 /* 2c: Afronden op twee decimalen */
 // Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
