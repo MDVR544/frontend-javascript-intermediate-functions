@@ -92,6 +92,10 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // averageGrade([6, 4, 5]) geeft 5
 // averageGrade([8, 9, 4, 6, 10]) geeft 7.4
 
+/* 2c: Afronden op twee decimalen */
+// Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
+// Tip: Google is your best friend!
+
 let totalGrades = 0;
 let indexCount = 0;
 
@@ -104,16 +108,9 @@ function averageGrade(arr2){
     return console.log(averageResult.toFixed(2));
 }
 
-// averageGrade((grades));
+averageGrade((grades));
 // averageGrade([6, 4, 5]);
 // averageGrade([8, 9, 4, 6, 10]);
-
-/* 2c: Afronden op twee decimalen */
-// Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
-// Tip: Google is your best friend!
-
-
-
 
 /* Bonusopdracht: hoogste cijfer */
 
