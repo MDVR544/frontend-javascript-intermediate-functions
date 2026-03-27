@@ -96,19 +96,19 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
 // Tip: Google is your best friend!
 
-let totalGrades = 0;
-let indexCount = 0;
-
-function averageGrade(arr2){
-    for (let i = 0; i < arr2.length; i++) {
-        totalGrades += arr2[i];
-        indexCount++
-    }
-    let averageResult = totalGrades / indexCount
-    return console.log(averageResult.toFixed(2));
-}
-
-averageGrade((grades));
+// let totalGrades = 0;
+// let indexCount = 0;
+//
+// function averageGrade(arr2){
+//     for (let i = 0; i < arr2.length; i++) {
+//         totalGrades += arr2[i];
+//         indexCount++
+//     }
+//     let averageResult = totalGrades / indexCount
+//     return console.log(averageResult.toFixed(2));
+// }
+//
+// averageGrade((grades));
 // averageGrade([6, 4, 5]);
 // averageGrade([8, 9, 4, 6, 10]);
 
@@ -117,11 +117,24 @@ averageGrade((grades));
 /* 3a: Script schrijven  */
 // Schrijf een script die op basis van de grades array (hierboven) checkt wat het hoogst behaalde cijfer is. Je mag hier geen bestaande methoden voor gebruiken. Schrijf de stapjes eerst uit en vraag jezelf de volgende dingen af:
 // * Hoe kan ik iedere waarde van de array langsgaan?
+    // door een for loop te gebruiken met de lengte van de array in acht nemen;
 // * Op welke conditie moet ik checken?
+    // is het huidige cijfer hoger als het eerder gedachte.
 // * Hoe zorgt ik ervoor dat wanneer ik een cijfer tegenkom die aan de conditie voldoet, ik dit ergens kan opslaan?
+    // een extra variabele maken waar dit in opgeslagen kan worden.
 // Log het antwoord in de terminal.
 
 // ---- Verwachte uitkomst: 9
+// let bestGrade = grades[0];
+//
+// for (let i = 1; i < grades.length; i++) {
+//
+//     if (grades[i] > bestGrade){
+//         bestGrade = grades[i];
+//     }
+// }
+// console.log(bestGrade);
+
 
 
 /* 3b: Omschrijven tot een herbruikbare functie */
@@ -133,3 +146,18 @@ averageGrade((grades));
 // highestGrade(grades) geeft 9
 // highestGrade([6, 4, 5]) geeft 6
 // highestGrade([8, 9, 4, 6, 10]) geeft 10
+
+function highestGrade(newGrades) {
+    let bestGrade = newGrades[0];
+
+    for (let i = 1; i < newGrades.length; i++) {
+
+        if (newGrades[i] > bestGrade) {
+            bestGrade = newGrades[i];
+        }
+    }
+    return bestGrade;
+}
+console.log(highestGrade(grades));
+console.log(highestGrade([6, 4, 5]));
+console.log(highestGrade([8, 9, 4, 6, 10]));
